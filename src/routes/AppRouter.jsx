@@ -7,8 +7,8 @@ import ResetPassword from "../pages/auth/ResetPassword";
 import Perfil from "../pages/cuenta/Perfil";
 import Productos from "../pages/productos/Productos";
 import Carrito from "../pages/Cart/Carrito";
-import MisPedidos from "../pages/orders/MisPedidos";
-import DetallePedido from "../pages/orders/DetallePedido";
+import MisPedidos from "../pages/Orders/MisPedidos";
+import DetallePedido from "../pages/Orders/DetallePedido";
 import Checkout from "../pages/checkout/Checkout";
 
 import PrivateRoute from "./PrivateRoute";
