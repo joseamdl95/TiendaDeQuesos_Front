@@ -36,7 +36,7 @@ export default function Productos() {
     return (
         <div style={{ padding: "20px" }}>
 
-            <h1>Tienda de Quesos 🧀</h1>
+            <h1>Tienda de Quesos </h1>
 
             {/* PRODUCTOS */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
@@ -46,7 +46,12 @@ export default function Productos() {
                         <img 
                             src={p.url_imagen} 
                             alt={p.nombre} 
-                            style={{ width: "100%" }}
+                            style={{ 
+                                width: "100%",
+                                height: "300px",   
+                                objectFit: "cover",
+                                display: "block"
+                            }}
                         />
 
                         <h3>{p.nombre}</h3>

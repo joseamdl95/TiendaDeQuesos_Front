@@ -12,80 +12,110 @@ export default function Navbar() {
   }, 0);
 
   return (
-    <nav
-      style={{
-        padding: "15px 20px",
-        borderBottom: "1px solid #ddd",
-        display: "flex",
-        gap: "15px",
-        alignItems: "center",
-        flexWrap: "wrap"
-      }}
-    >
-      {/* VISITANTE / USER */}
-      {!user || user.rol === "USER" ? (
-        <>
-          <Link to="/">🏠 Tienda</Link>
-          <Link to="/cart">
-            🛒 Carrito ({totalItems})
-          </Link>
-        </>
-      ) : null}
+    <>
+      {/* CABECERA CON LOGO */}
+      <header
+        style={{
+          width: "100%",
+          backgroundColor: "#f8f5ef",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "20px 0",
+          borderBottom: "1px solid #ddd"
+        }}
+      >
+        <Link to="/">
+          <img
+            src="https://pub-b6e9caf0a05440a78986b5a53989c2d5.r2.dev/logo-quesos.png"
+            alt="Tienda de Quesos"
+            style={{
+              width: "100%",
+              maxWidth: "900px",
+              height: "auto",
+              objectFit: "contain"
+            }}
+          />
+        </Link>
+      </header>
 
-      {/* USER LOGUEADO */}
-      {user && user.rol === "USER" && (
-        <>
-          <Link to="/orders">
-            📦 Mis pedidos
-          </Link>
+      {/* NAVBAR */}
+      <nav
+        style={{
+          padding: "15px 20px",
+          borderBottom: "1px solid #ddd",
+          display: "flex",
+          gap: "15px",
+          alignItems: "center",
+          flexWrap: "wrap"
+        }}
+      >
+        {/* VISITANTE / USER */}
+        {!user || user.rol === "USER" ? (
+          <>
+            <Link to="/">🏠 Tienda</Link>
+            <Link to="/cart">
+              🛒 Carrito ({totalItems})
+            </Link>
+          </>
+        ) : null}
 
-          <Link to="/perfil">
-            👤 Perfil
-          </Link>
+        {/* USER LOGUEADO */}
+        {user && user.rol === "USER" && (
+          <>
+            <Link to="/orders">
+              📦 Mis pedidos
+            </Link>
 
-          <button onClick={logout}>
-            🚪 Logout
-          </button>
-        </>
-      )}
+            <Link to="/perfil">
+              👤 Perfil
+            </Link>
 
-      {/* VISITANTE */}
-      {!user && (
-        <>
-          <Link to="/login">
-            🔐 Login
-          </Link>
+            <button onClick={logout}>
+              🚪 Logout
+            </button>
+          </>
+        )}
 
-          <Link to="/register">
-            📝 Registro
-          </Link>
-        </>
-      )}
+        {/* VISITANTE */}
+        {!user && (
+          <>
+            <Link to="/login">
+              🔐 Login
+            </Link>
 
-      {/* ADMIN */}
-      {user && user.rol === "ADMIN" && (
-        <>
-          <Link to="/admin/products">
-            📦 Productos
-          </Link>
+            <Link to="/register">
+              📝 Registro
+            </Link>
+          </>
+        )}
 
-          <Link to="/admin/orders">
-            📦 Pedidos
-          </Link>
+        {/* ADMIN */}
+        {user && user.rol === "ADMIN" && (
+          <>
+            <Link to="/admin/products">
+              📦 Productos
+            </Link>
 
-          <Link to="/">
-            🏠 Ver tienda
-          </Link>
+            <Link to="/admin/orders">
+              📦 Pedidos
+            </Link>
 
-          <Link to="/perfil">
-            👤 Perfil
-          </Link>
+            <Link to="/">
+              🏠 Ver tienda
+            </Link>
 
-          <button onClick={logout}>
-            🚪 Logout
-          </button>
-        </>
-      )}
-    </nav>
+            <Link to="/perfil">
+              👤 Perfil
+            </Link>
+
+            <button onClick={logout}>
+              🚪 Logout
+            </button>
+          </>
+        )}
+      </nav>
+    </>
+    
   );
 }
