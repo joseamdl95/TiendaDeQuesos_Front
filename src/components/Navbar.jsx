@@ -29,12 +29,12 @@ export default function Navbar() {
           <img
             src="https://pub-b6e9caf0a05440a78986b5a53989c2d5.r2.dev/logo-quesos.png"
             alt="Tienda de Quesos"
-           style={{
-            width: "100%",
-            maxWidth: "700px",
-            height: "120px",
-            objectFit: "cover",
-            display: "block"
+            style={{
+              width: "100%",
+              maxWidth: "700px",
+              height: "180px", // controla altura real
+              objectFit: "cover",
+              display: "block"
           }}
           />
         </Link>
