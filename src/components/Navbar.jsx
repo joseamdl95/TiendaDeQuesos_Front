@@ -32,7 +32,7 @@ export default function Navbar() {
            tyle={{
             width: "100%",
             maxWidth: "700px",
-            height: "180px",
+            height: "120px",
             objectFit: "cover",
             display: "block"
           }}
