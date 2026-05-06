@@ -17,7 +17,7 @@ export default function Navbar() {
       <header
         style={{
           width: "100%",
-          backgroundColor: "#f8f5ef",
+          backgroundColor: "#ffffff",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
