@@ -32,7 +32,7 @@ export default function Navbar() {
             style={{
               width: "100%",
               maxWidth: "700px",
-              height: "180px", // controla altura real
+              height: "220px",
               objectFit: "cover",
               display: "block"
           }}
