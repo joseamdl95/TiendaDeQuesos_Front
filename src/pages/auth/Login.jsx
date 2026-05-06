@@ -65,10 +65,6 @@ export default function Login() {
         borderRadius: "8px"
       }}
     >
-      <h1 style={{ textAlign: "center" }}>
-        Tienda de Quesos
-      </h1>
-
       <h2 style={{ textAlign: "center" }}>
         {show2FA
           ? "Verificación 2FA"
