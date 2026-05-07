@@ -95,7 +95,7 @@ export default function Navbar() {
         {user && user.rol === "ADMIN" && (
           <>
             <Link to="/admin/products">
-              📦 Productos
+              🧀 Productos
             </Link>
 
             <Link to="/admin/orders">

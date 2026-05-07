@@ -121,7 +121,7 @@ export default function AdminProducts() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1>📦 Administración de Productos</h1>
+      <h1>🧀 Gestion de Productos</h1>
 
       <form
         onSubmit={handleSubmit}
