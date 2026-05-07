@@ -18,25 +18,24 @@ export async function apiFetch(endpoint, options = {}) {
     headers,
   })
 
-  const text = await response.text()
-
-  console.log("RESPUESTA BACK:", text)
-
-  let data = {}
-
-  try {
-    data = text ? JSON.parse(text) : {}
-  } catch (e) {
-    throw new Error("El servidor no devolvió JSON válido")
-  }
-
   if (!response.ok) {
-    throw new Error(data.error || data.message || "Error API")
+
+    const text = await response.text()
+
+    let error = {}
+
+    try {
+      error = text ? JSON.parse(text) : {}
+    } catch {
+      throw new Error("Error del servidor")
+    }
+
+    throw new Error(error.error || error.message || "Error API")
   }
 
   if (options.responseType === "blob") {
     return response
   }
 
-  return data
+  return response.json()
 }
