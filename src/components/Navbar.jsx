@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const { user, logout, loading } = useAuth();
 
   const { cart = [] } = useCart();
