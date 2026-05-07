@@ -1,5 +1,7 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
+
 export async function apiFetch(endpoint, options = {}) {
+
   const token = localStorage.getItem("token")
 
   const headers = {
@@ -16,15 +18,25 @@ export async function apiFetch(endpoint, options = {}) {
     headers,
   })
 
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({}))
-    throw new Error(error.error || error.message || "Error API")
+  const text = await response.text()
+
+  console.log("RESPUESTA BACK:", text)
+
+  let data = {}
+
+  try {
+    data = text ? JSON.parse(text) : {}
+  } catch (e) {
+    throw new Error("El servidor no devolvió JSON válido")
   }
 
-  // 👇 CLAVE
+  if (!response.ok) {
+    throw new Error(data.error || data.message || "Error API")
+  }
+
   if (options.responseType === "blob") {
     return response
   }
 
-  return response.json()
+  return data
 }
