@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate} from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  
   const { user, logout, loading } = useAuth();
 
   const { cart = [] } = useCart();
@@ -110,7 +112,12 @@ export default function Navbar() {
               👤 Perfil
             </Link>
 
-            <button onClick={logout}>
+            <button 
+              onClick={() => {
+                logout();
+                navigate("/");
+              }}
+            >
               🚪 Logout
             </button>
           </>
