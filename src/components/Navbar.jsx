@@ -72,7 +72,10 @@ export default function Navbar() {
               👤 Perfil
             </Link>
 
-            <button onClick={logout}>
+            <button onClick={() => {
+              logout();
+              navigate("/");
+            }}>
               🚪 Logout
             </button>
           </>
@@ -110,7 +113,10 @@ export default function Navbar() {
               👤 Perfil
             </Link>
 
-            <button onClick={logout}>
+            <button onClick={() => {
+              logout();
+              navigate("/");
+            }}>
               🚪 Logout
             </button>
           </>
