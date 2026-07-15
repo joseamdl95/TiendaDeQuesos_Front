@@ -1,16 +1,16 @@
-# React + Vite
+# Tienda de Quesos - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interfaz de usuario para la tienda online de quesos, desarrollada con React y Vite. Permite navegar por el catálogo, gestionar carrito, realizar pedidos y administrar la tienda (roles de usuario y admin).
 
-Currently, two official plugins are available:
+## 🛠️ Stack
+- React 18
+- Vite
+- React Router
+- Context API (AuthContext, CartContext)
+- Desplegado en Vercel
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ⚙️ Instalación local
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/joseamdl95/TiendaDeQuesos_Front.git
